@@ -29,7 +29,7 @@ const Form1 = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post("http://localhost:5000/api/accommodation/submit", userHelp);
+            const response = await axios.post("https://sakhi-backend-jroa.onrender.com/api/accommodation/submit", userHelp);
             setStatusMessage("Accommodation request submitted successfully!");
             console.log(response.data);
 

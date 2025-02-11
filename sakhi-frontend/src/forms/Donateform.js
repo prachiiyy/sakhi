@@ -29,7 +29,7 @@ const Donateform = () => {
                 amount: payment.amount
             };
 
-            const response = await axios.post("http://localhost:5000/api/donation/create", donationData);
+            const response = await axios.post("https://sakhi-backend-jroa.onrender.com/api/donation/create", donationData);
             setStatusMessage("Donation processed successfully!");
             console.log(response.data);
 

@@ -29,7 +29,7 @@ const Form = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:5000/api/help/submit", userHelp);
+            const response = await axios.post("https://sakhi-backend-jroa.onrender.com/api/help/submit", userHelp);
             setStatusMessage("Form submitted successfully!");
             console.log(response.data);
             
