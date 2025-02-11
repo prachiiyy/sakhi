@@ -17,6 +17,6 @@ Sakhi is a web application dedicated to providing support, resources, and assist
 - **CSS** - Styles the frontend components.
 
 
-## (For Backend: https://sakhi-backend-jroa.onrender.com)
+### (For Backend: https://sakhi-backend-jroa.onrender.com)
 
-### Project link: https://sakhi-frontend.onrender.com
+## Project link: https://sakhi-frontend.onrender.com
