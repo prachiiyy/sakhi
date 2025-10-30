@@ -1,19 +1,21 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-const HelpRequestSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    contactMethod: { type: String, required: true },
-    contactNumber: { type: String, required: true },
-    address: { type: String, required: true },
-    currentSituation: { type: String, required: true },
-    safetyConcerns: { type: String, required: true },
-    children: { type: Number, default: 0 },
-    historyOfAbuse: { type: String },
-    message: { type: String },
-    physicalHealth: { type: String },
-    contactedBefore: { type: Boolean, default: false },
-    legalAssistance: { type: Boolean, default: false },
-    confidentialCounselling: { type: Boolean, default: false },
+const helpSchema = new mongoose.Schema({
+  name: String,
+  contactMethod: String,
+  contactNumber: String,
+  address: String,
+  currentSituation: String,
+  safetyConcerns: String,
+  children: String,
+  historyOfAbuse: String,
+  message: String,
+  physicalHealth: String,
+  contactedBefore: Boolean,
+  legalAssistance: Boolean,
+  confidentialCounselling: Boolean,
+  status: { type: String, enum: ['pending','assigned','resolved'], default: 'pending' },
+  assignedTo: { type: mongoose.Schema.Types.ObjectId, ref: 'User', default: null }
 }, { timestamps: true });
 
-module.exports = mongoose.model("HelpRequest", HelpRequestSchema);
+module.exports = mongoose.model('HelpRequest', helpSchema);
