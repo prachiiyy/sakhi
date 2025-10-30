@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import api from '../axiosConfig';
 import '../donate.css';
 
 const Donateform = () => {
@@ -29,7 +29,7 @@ const Donateform = () => {
                 amount: payment.amount
             };
 
-            const response = await axios.post("https://sakhi-backend-jroa.onrender.com/api/donation/create", donationData);
+            const response = await api.post("https://sakhi-backend-jroa.onrender.com/api/donation/create", donationData);
             setStatusMessage("Donation processed successfully!");
             console.log(response.data);
 

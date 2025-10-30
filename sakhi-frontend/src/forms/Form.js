@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios"; 
+import api from '../axiosConfig'; 
 import '../form.css';
 
 const Form = () => {
@@ -29,7 +29,7 @@ const Form = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("https://sakhi-backend-jroa.onrender.com/api/help/submit", userHelp);
+            const response = await api.post("https://sakhi-backend-jroa.onrender.com/api/help/submit", userHelp);
             setStatusMessage("Form submitted successfully!");
             console.log(response.data);
             
